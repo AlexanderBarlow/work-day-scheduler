@@ -24,6 +24,8 @@ $(function () {
         event.preventDefault();
         var time = $(this).parent().attr('id');
         var textEntry = $(this).siblings('.description').val();
+        console.log(time);
+        console.log(textEntry);
         localStorage.setItem(time,textEntry);
 
     })
@@ -38,7 +40,7 @@ $(function () {
         var currentHour = dayjs().hour();
         console.log(currentHour);
         timeBlock.each(function () {
-            var blockTime = -(parseInt($(this).attr("id").split("hour")[1]));
+            var blockTime = (parseInt($(this).attr("id").split("hour-")[1]));
             console.log(blockTime);
             if (blockTime < currentHour) {
                 $(this).removeClass("future");
@@ -66,15 +68,24 @@ $(function () {
     // TODO: Add code to get any user input that was saved in localStorage and set
 
     function localS () {
-        localStorage.getItem("hour9");
-        localStorage.getItem("hour10");
-        localStorage.getItem("hour11");
-        localStorage.getItem("hour12");
-        localStorage.getItem("hour13");
-        localStorage.getItem("hour14");
-        localStorage.getItem("hour15");
-        localStorage.getItem("hour16");
-        localStorage.getItem("hour17");
+        var s9 = localStorage.getItem('hour-9');
+        $('#hour-9 .description').val(s9);
+        var s10 = localStorage.getItem('hour-10');
+        $('#hour-10 .description').val(s10);
+        var s11 = localStorage.getItem('hour-11');
+        $('#hour-11 .description').val(s11);
+        var s12 = localStorage.getItem('hour-12');
+        $('#hour-12 .description').val(s12);
+        var s1 = localStorage.getItem('hour-13');
+        $('#hour-13 .description').val(s1);
+        var s2 = localStorage.getItem('hour-14');
+        $('#hour-14 .description').val(s2);
+        var s3 = localStorage.getItem('hour-15');
+        $('#hour-15 .description').val(s3);
+        var s4 = localStorage.getItem('hour-16');
+        $('#hour-16 .description').val(s4);
+        var s5 = localStorage.getItem('hour-17');
+        $('#hour-17 .description').val(s5);
 
     }
     // the values of the corresponding textarea elements. HINT: How can the id
