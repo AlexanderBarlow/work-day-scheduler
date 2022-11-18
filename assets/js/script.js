@@ -22,10 +22,13 @@ $(function () {
     // TODO: Add a listener for click events on the save button. This code should
     saveButton.on('click', function(event) {
         event.preventDefault();
+        //takes the scope of the window and looks at parent elements with the attribute id and stores that id in the declared variable
         var time = $(this).parent().attr('id');
+        //takes the scope of the window and looks at the siblings with a class of description and sets the input value to the declared variable
         var textEntry = $(this).siblings('.description').val();
         console.log(time);
         console.log(textEntry);
+        //pushes the variables into local strage, using the respective ids as the key for the text entries
         localStorage.setItem(time,textEntry);
 
     })
@@ -39,9 +42,11 @@ $(function () {
     function timeOfDay() {
         var currentHour = dayjs().hour();
         console.log(currentHour);
+        //this jquery function(each) iterates over timeBlock, which is declared above as any element with a class of time-block
         timeBlock.each(function () {
             var blockTime = (parseInt($(this).attr("id").split("hour-")[1]));
             console.log(blockTime);
+            //this conditional will apply the classes or remove them respectively
             if (blockTime < currentHour) {
                 $(this).removeClass("future");
                 $(this).removeClass("present");
@@ -66,7 +71,7 @@ $(function () {
     // current hour in 24-hour time?
     //
     // TODO: Add code to get any user input that was saved in localStorage and set
-
+//this function pulls the local storage per key and sets the value to the textarea with a class of description
     function localS () {
         var s9 = localStorage.getItem('hour-9');
         $('#hour-9 .description').val(s9);
@@ -90,6 +95,8 @@ $(function () {
     }
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
+
+    //calling function to apply localstorage to the page and add classes to the time block 
     localS();
     timeOfDay();
   });
