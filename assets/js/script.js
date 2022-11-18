@@ -2,7 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-    var currentDate = dayjs();
+    var currentDate = dayjs().format('YYYY,M/D');
     $('#currentDay').text(currentDate);
     var hour9 = $("#hour-9 .description").val;
     var hour10 = $("#hour-10 .description").val;

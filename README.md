@@ -7,7 +7,7 @@ This website provides the opportunity to set daily reminders for their respectiv
 ## Installation
 
 Visit the website via this url: 
-Visit the Github repo via this url: 
+Visit the Github repo via this url: https://github.com/AlexanderBarlow/work-day-scheduler
 
 ## Usage
 
