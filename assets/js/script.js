@@ -4,15 +4,6 @@
 $(function () {
     var currentDate = dayjs().format('YYYY,M/D');
     $('#currentDay').text(currentDate);
-    var hour9 = $("#hour-9 .description").val;
-    var hour10 = $("#hour-10 .description").val;
-    var hour11 = $("#hour-11 .description").val;
-    var hour12 = $("#hour-12 .description").val;
-    var hour13 = $("#hour-13 .description").val;
-    var hour14 = $("#hour-14 .description").val;
-    var hour15 = $("#hour-15 .description").val;
-    var hour16 = $("#hour-16 .description").val;
-    var hour17 = $("#hour-17 .description").val;
     
     var saveButton = $('.saveBtn');
     var time = $(this).parent().attr('div');
